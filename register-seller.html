@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기본 정보 - 링커스</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3B82F6',
+            secondary: '#10B981',
+            'primary-dark': '#2563EB',
+            'secondary-dark': '#059669',
+            background: '#F9FAFB',
+            foreground: '#1F2937',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+  </style>
+</head>
+<body class="bg-background">
+  <header class="sticky-header bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex">
+          <div class="flex-shrink-0 flex items-center">
+            <a href="index.html" class="text-xl font-bold text-primary">링커스</a>
+          </div>
+          <nav class="ml-6 flex space-x-8">
+            <a href="index.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">
+              홈
+            </a>
+            <a href="#" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">
+              수공예품
+            </a>
+            <a href="#" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">
+              패션/의류
+            </a>
+            <a href="#" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">
+              뷰티/화장품
+            </a>
+            <a href="#" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">
+              소형가전/생활용품/기타
+            </a>
+          </nav>
+        </div>
+        <div class="flex items-center">
+          <button class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md text-sm font-medium">
+            로그인
+          </button>
+          <button class="ml-4 bg-white hover:bg-gray-50 text-primary px-4 py-2 rounded-md text-sm font-medium border border-primary">
+            회원가입
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <!-- 페이지 제목 -->
+    <div class="text-center mb-12">
+      <h1 class="text-3xl font-bold text-gray-900">판매자 등록</h1>
+      <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+        링커스 플랫폼에서 판매자로 등록하고 여러분의 상품을 오프라인 매장에서 판매하세요!
+      </p>
+    </div>
+
+    <!-- 단계 인디케이터 -->
+    <div class="mb-12">
+      <div class="flex items-center justify-center max-w-xl mx-auto">
+        <a href="register-seller.html" class="flex flex-col items-center group">
+          <div class="rounded-full h-16 w-16 flex items-center justify-center bg-primary text-white font-bold text-lg">
+            1
+          </div>
+          <div class="mt-2 text-center text-sm font-medium">
+            기본 정보
+          </div>
+        </a>
+        <div class="h-1 w-full bg-gray-300 mx-2"></div>
+        <a href="register-seller-business.html" class="flex flex-col items-center group">
+          <div class="rounded-full h-16 w-16 flex items-center justify-center bg-gray-300 text-gray-700 font-bold text-lg">
+            2
+          </div>
+          <div class="mt-2 text-center text-sm font-medium text-gray-500">
+            사업자 정보
+          </div>
+        </a>
+        <div class="h-1 w-full bg-gray-300 mx-2"></div>
+        <a href="register-seller-profile.html" class="flex flex-col items-center group">
+          <div class="rounded-full h-16 w-16 flex items-center justify-center bg-gray-300 text-gray-700 font-bold text-lg">
+            3
+          </div>
+          <div class="mt-2 text-center text-sm font-medium text-gray-500">
+            판매자 프로필
+          </div>
+        </a>
+        <div class="h-1 w-full bg-gray-300 mx-2"></div>
+        <a href="register-seller-payment.html" class="flex flex-col items-center group">
+          <div class="rounded-full h-16 w-16 flex items-center justify-center bg-gray-300 text-gray-700 font-bold text-lg">
+            4
+          </div>
+          <div class="mt-2 text-center text-sm font-medium text-gray-500">
+            정산 정보
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 폼 섹션 -->
+    <div class="bg-white shadow-md rounded-lg p-8 mb-8">
+      <h2 class="text-xl font-semibold mb-6 pb-4 border-b border-gray-200">사업자 정보 입력</h2>
+      
+      <form action="#" method="POST" class="space-y-6">
+        <!-- 사업자 정보 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="business_number" class="block text-sm font-medium text-gray-700 mb-1">
+              사업자등록번호 <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="business_number"
+              name="business_number"
+              placeholder="000-00-00000"
+              required
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+            />
+            <p class="mt-1 text-xs text-gray-500">'-'없이 10자리 숫자로 입력해주세요.</p>
+          </div>
+          
+          <div>
+            <label for="company_name" class="block text-sm font-medium text-gray-700 mb-1">
+              상호명 <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="company_name"
+              name="company_name"
+              placeholder="사업자등록증상의 상호명"
+              required
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+            />
+          </div>
+
+          <div>
+            <label for="representative" class="block text-sm font-medium text-gray-700 mb-1">
+              대표자명 <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="representative"
+              name="representative"
+              placeholder="사업자등록증상의 대표자명"
+              required
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+            />
+          </div>
+
+          <div>
+            <label for="business_type" class="block text-sm font-medium text-gray-700 mb-1">
+              업태 및 종목 <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="business_type"
+              name="business_type"
+              placeholder="예: 도소매 / 생활용품"
+              required
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+            />
+          </div>
+        </div>
+
+        <!-- 사업장 주소 -->
+        <div class="mt-8">
+          <h3 class="text-lg font-medium mb-4">사업장 주소</h3>
+          <div class="grid grid-cols-1 md:grid-cols-6 gap-4 mb-4">
+            <div class="md:col-span-2">
+              <label for="zipcode" class="block text-sm font-medium text-gray-700 mb-1">
+                우편번호 <span class="text-red-500">*</span>
+              </label>
+              <div class="flex">
+                <input
+                  type="text"
+                  id="zipcode"
+                  name="zipcode"
+                  placeholder="우편번호"
+                  readonly
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+                />
+                <button
+                  type="button"
+                  class="ml-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-md"
+                >
+                  주소찾기
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 gap-4">
+            <div>
+              <label for="address1" class="block text-sm font-medium text-gray-700 mb-1">
+                기본주소 <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="address1"
+                name="address1"
+                placeholder="기본주소"
+                readonly
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label for="address2" class="block text-sm font-medium text-gray-700 mb-1">
+                상세주소 <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="address2"
+                name="address2"
+                placeholder="상세주소를 입력해주세요"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- 사업자등록증 첨부 -->
+        <div class="mt-8">
+          <h3 class="text-lg font-medium mb-4">사업자등록증 첨부</h3>
+          <div class="border-2 border-dashed border-gray-300 rounded-md p-6">
+            <div class="flex flex-col items-center">
+              <svg class="h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              <p class="mt-1 text-sm text-gray-600">
+                사업자등록증을 JPG, PNG, PDF 형식으로 업로드해주세요
+              </p>
+              <div class="mt-4">
+                <input type="file" id="business_certificate" name="business_certificate" class="hidden" accept=".jpg,.jpeg,.png,.pdf" />
+                <label
+                  for="business_certificate"
+                  class="px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 cursor-pointer"
+                >
+                  파일 선택
+                </label>
+              </div>
+              <p class="mt-2 text-xs text-gray-500">파일 크기는 10MB 이하로 업로드해주세요.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 판매 카테고리 선택 -->
+        <div class="mt-8">
+          <h3 class="text-lg font-medium mb-4">판매 카테고리</h3>
+          <p class="text-sm text-gray-600 mb-4">판매하실 상품의 주요 카테고리를 선택해주세요. (최대 3개)</p>
+          
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="flex items-center">
+              <input type="checkbox" id="category_handmade" name="categories[]" value="handmade" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" />
+              <label for="category_handmade" class="ml-2 block text-sm text-gray-700">수공예품</label>
+            </div>
+            <div class="flex items-center">
+              <input type="checkbox" id="category_food" name="categories[]" value="food" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" />
+              <label for="category_food" class="ml-2 block text-sm text-gray-700">소형가전</label>
+            </div>
+            <div class="flex items-center">
+              <input type="checkbox" id="category_fashion" name="categories[]" value="fashion" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" />
+              <label for="category_fashion" class="ml-2 block text-sm text-gray-700">패션/의류</label>
+            </div>
+            <div class="flex items-center">
+              <input type="checkbox" id="category_beauty" name="categories[]" value="beauty" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" />
+              <label for="category_beauty" class="ml-2 block text-sm text-gray-700">뷰티/화장품</label>
+            </div>
+            <div class="flex items-center">
+              <input type="checkbox" id="category_living" name="categories[]" value="living" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" />
+              <label for="category_living" class="ml-2 block text-sm text-gray-700">생활용품</label>
+            </div>
+            <div class="flex items-center">
+              <input type="checkbox" id="category_other" name="categories[]" value="other" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" />
+              <label for="category_other" class="ml-2 block text-sm text-gray-700">기타</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- 버튼 그룹 -->
+        <div class="flex justify-between mt-10 pt-6 border-t border-gray-200">
+          <button
+            type="button"
+            class="px-6 py-3 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200"
+          >
+            이전 단계
+          </button>
+          <button
+            type="submit"
+            class="px-6 py-3 bg-primary text-white rounded-md hover:bg-primary-dark"
+          >
+            다음 단계
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- 안내 정보 -->
+    <div class="bg-blue-50 rounded-lg p-6">
+      <h3 class="text-lg font-medium text-blue-800 mb-3">판매자 등록 안내</h3>
+      <p class="text-sm text-blue-700 mb-2">
+        판매자 등록은 총 4단계로 진행됩니다:
+      </p>
+      <ol class="list-decimal pl-5 text-sm text-blue-700 space-y-1">
+        <li><a href="register-seller.html" class="hover:underline">기본 정보 입력</a> - 기본적인 회원 정보를 입력합니다.</li>
+        <li><a href="register-seller-business.html" class="hover:underline">사업자 정보 입력</a> - 사업자등록증 정보와 사업장 주소를 입력합니다.</li>
+        <li><a href="register-seller-profile.html" class="hover:underline">판매자 프로필 작성</a> - 판매자 소개와 브랜드 스토리를 작성합니다.</li>
+        <li><a href="register-seller-payment.html" class="hover:underline">정산 정보 입력</a> - 판매대금 정산을 위한 계좌 정보를 입력합니다.</li>
+      </ol>
+      <p class="text-sm text-blue-700 mt-3">
+        모든 정보는 심사 후 승인되며, 일반적으로 1-2영업일 내에 처리됩니다.
+      </p>
+    </div>
+  </main>
+
+  <footer class="bg-gray-800 text-white mt-20">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4">링커스</h3>
+          <p class="text-gray-300">소상공인 상품을 오프라인 무대에서<br />판매하기 위한 무인매장 플랫폼</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">카테고리</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-300 hover:text-white">수공예품</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">패션/의류</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">뷰티/화장품</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">소형가전/생활용품/기타</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">고객지원</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-300 hover:text-white">자주 묻는 질문</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">문의하기</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">이용약관</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">개인정보처리방침</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+        <p>© 2023 링커스. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html> 

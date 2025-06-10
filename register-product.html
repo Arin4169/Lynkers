@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 등록 - 링커스</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .drag-area {
+            border: 2px dashed #ddd;
+            transition: all 0.3s ease;
+        }
+        .drag-area.active {
+            border-color: #4F46E5;
+            background-color: #EEF2FF;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- 헤더 -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-indigo-600">링커스</a>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-500 hover:text-gray-900">홈</a>
+                    <a href="register-product.html" class="text-gray-500 hover:text-gray-900">상품 등록</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-900">판매자 센터</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-900">고객지원</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-500 hover:text-gray-900">로그인</a>
+                    <a href="#" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">회원가입</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 메인 컨텐츠 -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white rounded-lg shadow p-6">
+            <h1 class="text-2xl font-bold text-gray-900 mb-8">상품 등록</h1>
+            
+            <!-- 상품 기본 정보 -->
+            <div class="space-y-6">
+                <div>
+                    <h2 class="text-lg font-medium text-gray-900 mb-4">상품 기본 정보</h2>
+                    <div class="grid grid-cols-1 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">베지터블 가죽 필통</label>
+                            <input type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">35,000원</label>
+                            <input type="number" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">수공예품</label>
+                            <select class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                                <option>수공예품</option>
+                                <option>패션/의류</option>
+                                <option>뷰티/화장품</option>
+                                <option>소형가전</option>
+                                <option>생활용품</option>
+                                <option>기타</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 상품 이미지 -->
+                <div>
+                    <h2 class="text-lg font-medium text-gray-900 mb-4">상품 이미지 (최대 5장)</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                        <!-- 이미지 업로드 영역 1 - p9 이미지 추가 -->
+                        <div class="rounded-lg overflow-hidden border border-gray-200">
+                            <img src="images/p9.png" alt="상품 이미지 1" class="w-full h-48 object-cover">
+                            <div class="p-2 bg-white">
+                                <p class="text-sm text-gray-700">이미지 1</p>
+                                <button class="text-xs text-red-500 mt-1">삭제</button>
+                            </div>
+                        </div>
+                        
+                        <!-- 이미지 업로드 영역 2 - p10 이미지 추가 -->
+                        <div class="rounded-lg overflow-hidden border border-gray-200">
+                            <img src="images/p10.png" alt="상품 이미지 2" class="w-full h-48 object-cover">
+                            <div class="p-2 bg-white">
+                                <p class="text-sm text-gray-700">이미지 2</p>
+                                <button class="text-xs text-red-500 mt-1">삭제</button>
+                            </div>
+                        </div>
+                        
+                        <!-- 이미지 업로드 영역 3 - p11 이미지 추가 -->
+                        <div class="rounded-lg overflow-hidden border border-gray-200">
+                            <img src="images/p11.png" alt="상품 이미지 3" class="w-full h-48 object-cover">
+                            <div class="p-2 bg-white">
+                                <p class="text-sm text-gray-700">이미지 3</p>
+                                <button class="text-xs text-red-500 mt-1">삭제</button>
+                            </div>
+                        </div>
+                        
+                        <!-- 이미지 업로드 영역 4 - p12 이미지 추가 -->
+                        <div class="rounded-lg overflow-hidden border border-gray-200">
+                            <img src="images/p12.png" alt="상품 이미지 4" class="w-full h-48 object-cover">
+                            <div class="p-2 bg-white">
+                                <p class="text-sm text-gray-700">이미지 4</p>
+                                <button class="text-xs text-red-500 mt-1">삭제</button>
+                            </div>
+                        </div>
+                        
+                        <!-- 이미지 업로드 영역 5 - 새로운 이미지 추가 가능 -->
+                        <div class="drag-area rounded-lg p-4 text-center cursor-pointer" data-index="5">
+                            <div class="text-gray-500">
+                                <svg class="mx-auto h-12 w-12" stroke="currentColor" fill="none" viewBox="0 0 48 48">
+                                    <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <p class="mt-2">이미지 추가</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 상품 상세 설명 -->
+                <div>
+                    <h2 class="text-lg font-medium text-gray-900 mb-4">상품 상세 설명</h2>
+                    <div>
+                        <textarea rows="15" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 whitespace-pre-wrap" placeholder="상품에 대한 자세한 설명을 입력해주세요.">시간이 흐를수록 함께한 시간 만큼 좋은 제품
+올디 구디 시리즈의 심플한 가죽 필통입니다.
+
+3~4개의 필기구를 여유있게 수납할 수 있으며
+사용하기에 따라 길이 드는 가죽으로 제작한 필통입니다.
+
+☆☆☆☆ 색상 안내 ☆☆☆☆
+
+소프트한 느낌의 가죽의 3컬러
+에토프
+소프트 다크브라운 (가장 인기많은 컬러)
+
+
+** 소재 : 소가죽
+(KC 인증 된 가죽을 사용합니다)
+색상 : 에토프 / 브라운 / 그린 / 기타 색상 가능 (문의 주세요)
+사이즈 : 가로 70 mm * 세로 약165mm
+제작기간 :　3～７일소요
+
+
+**교환/환불규정**
+
+※ 이니셜 각인 주문 시 교환/환불 불가
+※ 천연 소가죽 사용으로 가죽표면의
+점, 힘줄,상처 등으로 인한 교환 / 환불 불가
+※ 천연 소가죽 제품으로 부위마다
+무늬와 촉감이 다를수 있음
+※ 가죽만으로 제작되어 약간 늘어남이 있을 수 있음
+※ 개인차마다 가죽의 태닝 상태가 달라질 수 있음
+※ 단순변심으로 인한 교환/환불 불가
+
+◈ 주문과 동시에 제작되는 주문 제작 상품으로
+이니셜 각인 신청 시, 교환 및 환불이 어렵습니다.</textarea>
+                    </div>
+                </div>
+
+                <!-- 챗봇 Q&A 설정 -->
+                <div>
+                    <h2 class="text-lg font-medium text-gray-900 mb-4">챗봇 Q&A 설정</h2>
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-1 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">질문 1</label>
+                                <input type="text" value="가죽은 어떤 걸 사용하나요?" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="자주 묻는 질문을 입력하세요">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">답변 1</label>
+                                <textarea rows="2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="질문에 대한 답변을 입력하세요">KC 인증을 받은 천연 소가죽을 사용합니다. 에토프, 브라운, 그린 색상이 기본이며, 요청에 따라 다른 색상도 가능합니다.</textarea>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">질문 2</label>
+                                <input type="text" value="배송은 보통 얼마나 걸리나요?" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="자주 묻는 질문을 입력하세요">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">답변 2</label>
+                                <textarea rows="2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="질문에 대한 답변을 입력하세요">주문 제작 상품으로 제작에 3~7일이 소요되며, 배송은 보통 1~2일 내에 완료됩니다. 전체 소요 기간은 약 4~9일 정도입니다.</textarea>
+                            </div>
+                        </div>
+
+                        <!-- 추가 Q&A 버튼 -->
+                        <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200">
+                            + Q&A 추가
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 재고 관리 -->
+                <div>
+                    <h2 class="text-lg font-medium text-gray-900 mb-4">재고 관리</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">초기 재고 수량</label>
+                            <input type="number" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">재고 알림 기준</label>
+                            <input type="number" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 배송 정보 -->
+                <div>
+                    <h2 class="text-lg font-medium text-gray-900 mb-4">배송 정보</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">배송 방법</label>
+                            <select class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                                <option>무인매장 픽업</option>
+                                <option>택배 배송</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">배송비</label>
+                            <input type="number" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 저장 버튼 -->
+            <div class="mt-8 flex justify-end">
+                <button type="button" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                    상품 등록하기
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="bg-white border-t mt-12">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">회사 정보</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">회사 소개</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">이용약관</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">개인정보처리방침</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">판매자</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">판매자 등록</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">판매자 센터</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">판매자 가이드</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">고객지원</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">자주 묻는 질문</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">1:1 문의</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-base text-gray-500 hover:text-gray-900">공지사항</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">고객센터</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li>
+                            <p class="text-base text-gray-500">1544-0000</p>
+                        </li>
+                        <li>
+                            <p class="text-base text-gray-500">평일 09:00 - 18:00</p>
+                        </li>
+                        <li>
+                            <p class="text-base text-gray-500">주말 및 공휴일 휴무</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-200 pt-8">
+                <p class="text-base text-gray-400 text-center">
+                    &copy; 2024 링커스. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 이미지 업로드 영역 드래그 앤 드롭 기능
+        const dragAreas = document.querySelectorAll('.drag-area');
+        const uploadedImages = new Map();
+        
+        dragAreas.forEach(area => {
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                area.addEventListener(eventName, preventDefaults, false);
+            });
+
+            ['dragenter', 'dragover'].forEach(eventName => {
+                area.addEventListener(eventName, () => highlight(area), false);
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                area.addEventListener(eventName, () => unhighlight(area), false);
+            });
+
+            area.addEventListener('drop', (e) => handleDrop(e, area), false);
+            
+            // 클릭으로 파일 선택
+            area.addEventListener('click', () => {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = 'image/*';
+                input.onchange = (e) => handleFileSelect(e, area);
+                input.click();
+            });
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        function highlight(area) {
+            area.classList.add('active');
+        }
+
+        function unhighlight(area) {
+            area.classList.remove('active');
+        }
+
+        function handleDrop(e, area) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            handleFiles(files, area);
+        }
+
+        function handleFileSelect(e, area) {
+            const files = e.target.files;
+            handleFiles(files, area);
+        }
+
+        function handleFiles(files, area) {
+            if (files.length > 0) {
+                const file = files[0];
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const index = area.getAttribute('data-index');
+                        uploadedImages.set(index, e.target.result);
+                        updatePreview(area, e.target.result);
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    alert('이미지 파일만 업로드 가능합니다.');
+                }
+            }
+        }
+
+        function updatePreview(area, imageUrl) {
+            const preview = document.createElement('div');
+            preview.className = 'relative w-full h-full';
+            preview.innerHTML = `
+                <img src="${imageUrl}" class="w-full h-full object-cover rounded-lg">
+                <button class="absolute top-2 right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center hover:bg-red-600" onclick="removeImage(this)">
+                    ×
+                </button>
+            `;
+            area.innerHTML = '';
+            area.appendChild(preview);
+        }
+
+        function removeImage(button) {
+            const area = button.closest('.drag-area');
+            const index = area.getAttribute('data-index');
+            uploadedImages.delete(index);
+            area.innerHTML = `
+                <div class="text-gray-500">
+                    <svg class="mx-auto h-12 w-12" stroke="currentColor" fill="none" viewBox="0 0 48 48">
+                        <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p class="mt-2">이미지 ${index}</p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html> 
